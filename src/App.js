@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     const fetchMappings = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/get_data_mappings");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/get_data_mappings`);
         setMappings(response.data);
         console.log("Successfully fetched data mappings from backend.", response.data);
       } catch (err) {
